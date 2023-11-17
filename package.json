@@ -11,6 +11,6 @@
     "sass": "^1.69.5"
   },
   "scripts": {
-    "watch:sass": "node-sass -w styles/style.scss styles/style.css",
+    "watch:sass": "node-sass -w styles/style.scss styles/style.css"
   }
 }
