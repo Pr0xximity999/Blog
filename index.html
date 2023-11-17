@@ -27,16 +27,7 @@
         <br>
         <h2 style="margin-bottom: 0;">Some cool gifs my friends told me to add :3</h2>
         <div id="gifDrawer">
-            <script type="module">
-                const fs = require("fs"); 
-                
-                let filenames = fs.readdirSync('imageDrawer/'); 
-                    
-                console.log("\nFilenames in directory:"); 
-                filenames.forEach((file) => { 
-                    console.log("File:", file); 
-                }); 
-            </script>
+            <script src="scripts/imagedrawer.js" type="module"></script>
             <img class="gifDrawerImages" id="jiggyGif" src="https://media.discordapp.net/attachments/1135106634851561573/1173681764632379502/3eig5k25n10c1.gif"/>
             <img class="gifDrawerImages" id="tf2NakedSoldier" src="https://media.discordapp.net/attachments/836688410667647066/1165314806073540608/20231021_164430.gif"/>
             <img class="gifDrawerImages" id="cuddleEyeFish" src="https://cdn.discordapp.com/attachments/1135103635144069132/1175008915491131392/Cuttlefish_eye.jpg"/>
