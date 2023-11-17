@@ -1,22 +1,31 @@
+body {
+  background-color: black; }
+
+p, h1, h2, h3, h4, h5, h6, a {
+  color: greenyellow; }
+
 #mainBody, footer {
   justify-content: center;
   margin: auto;
   margin-bottom: 0%;
-  background-color: cadetblue;
-  width: 70%; }
+  background-color: #212c11;
+  width: 70%;
+  border: 3px solid greenyellow;
+  padding: 1em; }
 
 p, h1, h2 {
   margin: 0; }
 
 .gifDrawerImages {
   width: 60%;
-  min-width: 40%; }
+  min-width: 40%;
+  margin: 0.5em; }
 
 #gifDrawer {
   height: 20em;
   display: flex;
   overflow-x: auto;
-  border: .5em solid gray; }
+  border: 0.5em solid #111111; }
 
 footer {
   padding-top: 1em; }

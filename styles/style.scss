@@ -1,9 +1,17 @@
+body{
+    background-color: black;
+}
+p, h1, h2, h3, h4, h5, h6, a{
+    color: greenyellow;
+}
 #mainBody, footer{
     justify-content: center;
     margin: auto;
     margin-bottom: 0%;
-    background-color: cadetblue;
+    background-color: rgb(33, 44, 17);
     width: 70%;
+    border: 3px solid greenyellow;
+    padding: 1em;
 }
 p, h1, h2{
     margin: 0;
@@ -11,12 +19,13 @@ p, h1, h2{
 .gifDrawerImages{
     width: 60%;
     min-width: 40%;
+    margin: 0.5em;
 }
 #gifDrawer{
     height: 20em;
     display: flex   ;
     overflow-x: auto;
-    border: .5em solid gray;
+    border: .5em solid rgb(17, 17, 17);
 }
 footer{
     padding-top: 1em;  
