@@ -4,6 +4,7 @@ var images = [
     'eye.jpg',
     'snugbugrug.jpg',
     'hand.jpg',
+    'poop-meeting-surprised.gif',
 ]
 var div = document.getElementById('gifDrawer');
 
