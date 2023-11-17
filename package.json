@@ -6,7 +6,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "npm-sass": "^3.1.0",
+    "sass": "^1.69.5"
   },
   "scripts": {
     "watch:sass": "node-sass -w styles/style.scss styles/style.css"
