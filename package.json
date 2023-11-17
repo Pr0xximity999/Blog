@@ -12,6 +12,5 @@
   },
   "scripts": {
     "watch:sass": "node-sass -w styles/style.scss styles/style.css",
-    "images": "node imagedrawer.js"
   }
 }
