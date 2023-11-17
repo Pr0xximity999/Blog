@@ -8,6 +8,7 @@ var images = [
     'a_melhor_imagem_do_mundo.jpeg',
     'r4nhjdaz8kwb1.jpg',
     'Illustration308.png',
+    '58ekr0dl9lzb1.webp',
 ]
 var div = document.getElementById('gifDrawer');
 
