@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "This is uhhhh  \r uhhhhhh   \r uhhhhhhhhhhhhmmmm   \r yeag",
+  "main": "index.html",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "scripts": {
+    "watch:sass": "node-sass -w styles/style.scss styles/style.css"
+  }
+}
