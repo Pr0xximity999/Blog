@@ -7,6 +7,7 @@ var images = [
     'poop-meeting-surprised.gif',
     'a_melhor_imagem_do_mundo.jpeg',
     'r4nhjdaz8kwb1.jpg',
+    'Illustration308.png',
 ]
 var div = document.getElementById('gifDrawer');
 
