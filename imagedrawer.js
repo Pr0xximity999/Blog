@@ -3,6 +3,7 @@ var images = [
     'tf2naked.gif',
     'eye.jpg',
     'snugbugrug.jpg',
+    'hand.jpg'
 ]
 var div = document.getElementById('gifDrawer');
 
