@@ -1,31 +1,50 @@
-body {
-  background-color: black; }
-
-p, h1, h2, h3, h4, h5, h6, a {
-  color: greenyellow; }
-
-#mainBody, footer {
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 0%;
-  background-color: #212c11;
-  width: 70%;
-  border: 3px solid greenyellow;
-  padding: 1em; }
+p, h1, h2, h3, h4, h5, h6, a, ul, ol {
+  color: #74ff2e; }
 
 p, h1, h2 {
   margin: 0; }
 
+::-webkit-scrollbar {
+  width: .5em; }
+
+::-webkit-scrollbar-track {
+  background: #0e2900; }
+
+::-webkit-scrollbar-thumb {
+  background: #050f00; }
+
+body {
+  background-color: black; }
+
+#welcomeCard, #infoCard, #gifDrawer1, footer {
+  border: 3px solid #74ff2e;
+  background-color: #0e2900;
+  margin: 1em; }
+
+#mainBody {
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 0%;
+  width: 70%; }
+
+#welcomeCard {
+  width: 50%; }
+
 .gifDrawerImages {
+  height: 100%;
   width: 60%;
   min-width: 40%;
   margin: 0.5em; }
 
-#gifDrawer {
+#gifDrawer1 {
   height: 20em;
+  padding: 0.5em; }
+
+#gifDrawer2 {
+  height: 85%;
   display: flex;
   overflow-x: auto;
-  border: 0.5em solid #111111; }
+  overflow-y: hidden; }
 
 footer {
   padding-top: 1em; }

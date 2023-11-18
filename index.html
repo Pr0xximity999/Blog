@@ -2,18 +2,36 @@
 <html lang="en">
 <head>
     <title>WEBISTE</title>
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="tinymogus.gif" type="image/x-icon">
+    <link id="active style" rel="stylesheet" href="styles/style.css">
+    <link id="inactive style" rel="" href="styles/style2.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <header></header>
     <div id="mainBody">
-        <div id="jermaHidden"></div>  
-        <h1>Hewwoooo</h1> <br>
-        <button onclick="{
+        <div id="welcomeCard">
+            <h1>Hewwoooo</h1> 
+            <p>Welcome to my amazing blog!!!</p>
+            <p></p>
+            <a href="fridge.html">Click for cool plant in fridge</a>
+        </div>
+        <div id="infoCard">
+            <div id="infoCardRight">
+                <h4>Some info about me:</h4>
+                <ul>
+                    <li>My name is Thomas</li>
+                    <li>I like to program even though i lack a whole lot of motivation lol</li>
+                    <li>I like cats :3</li>
+                </ul>
+            </div>
+            <div id="infoCardLeft">
+
+            </div>
+        </div>
+        <!--<div id="jermaHidden"></div>  
+         <button onclick="{
             var img = new Image()
             img.src = 'https://cdn.discordapp.com/attachments/1135311307516690573/1175053970855702631/latest.png'
             img.style.width = '70%'
@@ -24,21 +42,21 @@
                 jermaHidden.innerHTML = '';
                 window.close();
             });
-            }">sex(real)</button>
+            }">sex(real)</button> 
         <p>(only works if you opened this site by clicking a link)</p>
-        <br>
-        <a href="fridge.html">Click for plant in fridge</a>
-        <h2 style="margin-bottom: 0;">Some cool gifs(or not gifs) my friends told me to add :3</h2>
-        <div id="gifDrawer">
-            <script src="imagedrawer.js" defer></script>
+        <br>-->
+        <div id="gifDrawer1">
+            <h2 style="margin-bottom: 0;">Some cool gifs(or not gifs) my friends told me to add :3</h2>
+            <div id="gifDrawer2">
+                <script src="imagedrawer.js" defer></script>
+            </div>
+            <p>^scrollbar^</p>
         </div>
+        <footer>
+            <p>Made by me :3 2023</p><br>
+            <p>Inspired by:</p>
+            <a href="https://dimden.dev/" target="_blank"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+        </footer>
     </div>
-    <footer>
-        <p>Made by Thomas :3 2023</p><br>
-        <p>Inspired by:</p>
-        <a href="https://dimden.dev/" target="_blank"><img src="https://dimden.dev/services/images/88x31.gif"></a>
-        <br>
-        <br>
-    </footer>
 </body>
 </html>
