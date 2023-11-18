@@ -1,10 +1,10 @@
 var images = [
     'jiggy.gif',
-    'tf2naked.gif',
     'eye.jpg',
     'snugbugrug.jpg',
     'hand.jpg',
     'poop-meeting-surprised.gif',
+    'tf2naked.gif',
     'a_melhor_imagem_do_mundo.jpeg',
     'r4nhjdaz8kwb1.jpg',
     'Illustration308.png',
