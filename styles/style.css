@@ -1,7 +1,5 @@
 p, h1, h2, h3, h4, h5, h6, a, ul, ol {
-  color: #74ff2e; }
-
-p, h1, h2 {
+  color: #74ff2e;
   margin: 0; }
 
 ::-webkit-scrollbar {
@@ -19,7 +17,8 @@ body {
 #welcomeCard, #infoCard, #gifDrawer1, footer {
   border: 3px solid #74ff2e;
   background-color: #0e2900;
-  margin: 1em; }
+  margin: 1em;
+  padding: 0.5em; }
 
 #mainBody {
   justify-content: center;

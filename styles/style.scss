@@ -7,8 +7,6 @@ $border-style:  3px solid $font-color;
 
 p, h1, h2, h3, h4, h5, h6, a, ul, ol{
     color: $font-color;
-}
-p, h1, h2{
     margin: 0;
 }
 
@@ -31,6 +29,7 @@ body{
     border: $border-style;
     background-color: $card-color;
     margin: 1em;
+    padding: 0.5em;
 }
 #mainBody{
     justify-content: center;
