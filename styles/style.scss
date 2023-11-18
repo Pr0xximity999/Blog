@@ -41,6 +41,11 @@ body{
 #welcomeCard{
     width: 50%;
 }
+#infoCard{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+}
 .gifDrawerImages{
     height: 100%;
     width: 60%;
