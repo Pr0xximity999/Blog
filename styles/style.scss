@@ -5,7 +5,7 @@ $font-color: hsl($c-hue, 100%, 59%);
 $card-color: hsl($c-hue, 100%, 8%);
 $border-style:  3px solid $font-color;
 
-p, h1, h2, h3, h4, h5, h6, a, ul, ol{
+p, h1, h2, h3, h4, h5, h6, a, ul, ol, li{
     color: $font-color;
     text-shadow: 0px 0px 6px 3px $font-color;;
     margin: 0;
@@ -39,23 +39,29 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol{
 body{
     background-color: black;
 }
+#body{
+    display: flex;
+    justify-content: center;
+}
 .cardBox{
     border: $border-style;
     background-color: $card-color;
     margin: 1em;
     padding: 0.5em;
-    box-shadow: 0px 0px 10px 0px $font-color;
+    box-shadow: 0px 0px 9px 0px $font-color;
+}
+#sideBarRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
 }
 #mainBody{
-    justify-content: center;
-    margin: auto;
     margin-bottom: 0%;
     width: 70%;
 
 }
 #welcomeCard{
-    display: flex;
-    flex-direction: column;
     width: 50%;
 }
 #infoCard{

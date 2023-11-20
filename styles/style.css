@@ -1,4 +1,4 @@
-p, h1, h2, h3, h4, h5, h6, a, ul, ol {
+p, h1, h2, h3, h4, h5, h6, a, ul, ol, li {
   color: #ffdc2e;
   text-shadow: 0px 0px 6px 3px #ffdc2e;
   margin: 0; }
@@ -27,22 +27,28 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol {
 body {
   background-color: black; }
 
+#body {
+  display: flex;
+  justify-content: center; }
+
 .cardBox {
   border: 3px solid #ffdc2e;
   background-color: #292200;
   margin: 1em;
   padding: 0.5em;
-  box-shadow: 0px 0px 10px 0px #ffdc2e; }
+  box-shadow: 0px 0px 9px 0px #ffdc2e; }
+
+#sideBarRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%; }
 
 #mainBody {
-  justify-content: center;
-  margin: auto;
   margin-bottom: 0%;
   width: 70%; }
 
 #welcomeCard {
-  display: flex;
-  flex-direction: column;
   width: 50%; }
 
 #infoCard {
