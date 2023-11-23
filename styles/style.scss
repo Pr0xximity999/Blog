@@ -26,6 +26,10 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol, li{
     pointer-events: none;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
 .cardBox{
     border: $border-style;
     background-color: $card-color;
@@ -51,11 +55,14 @@ body{
 #sideBarLeft{
     width: 15%;
 }
+#blogSideBarLeft{
+    width: 8%;
+}
 #blogHeaderTitle{
     font-size: 1.5em;
     margin-bottom: 0.5em;
 }
-#blogBody{
+#blogCardBody{
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
@@ -74,7 +81,18 @@ body{
 #mainBody{
     margin-bottom: 0%;
     width: 70%;
-
+}
+#blogBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#mainBlogBody{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    width: 60%;
 }
 #welcomeCard{
     width: 50%;

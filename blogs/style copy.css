@@ -17,9 +17,6 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol, li {
   background-size: 100% 2px, 3px 100%;
   pointer-events: none; }
 
-.clickable {
-  cursor: pointer; }
-
 .cardBox {
   border: 3px solid #ffdc2e;
   background-color: #292200;
@@ -44,14 +41,11 @@ body {
 #sideBarLeft {
   width: 15%; }
 
-#blogSideBarLeft {
-  width: 8%; }
-
 #blogHeaderTitle {
   font-size: 1.5em;
   margin-bottom: 0.5em; }
 
-#blogCardBody {
+#blogBody {
   display: flex;
   flex-direction: column;
   row-gap: 0.5em; }
@@ -70,18 +64,6 @@ body {
 #mainBody {
   margin-bottom: 0%;
   width: 70%; }
-
-#blogBody {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-
-#mainBlogBody {
-  margin-left: 1em;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em;
-  width: 60%; }
 
 #welcomeCard {
   width: 50%; }

@@ -22,13 +22,13 @@
         <div id="sideBarLeft">
             <div class="cardBox glow outerMargin roundedBorders">
                 <h1 id="blogHeaderTitle">My blog</h1>
-                <div id="blogBody">
-                    <div onclick="openBlog('23-11-2023_firstBlog.html')" id="blogCard1" class="cardBox">
+                <div id="blogCardBody">
+                    <div onclick="openBlog('23-11-2023_firstBlog.html')" id="blogCard1" class="cardBox clickable">
                         <div id="blogCardTitle">
-                            <h3>Title</h3>
-                            <p>23/11/2023</p>
+                            <h3>Genisis</h3>
+                            <h5>23/11/2023</h5>
                         </div>
-                        <p>text</p>
+                        <p>The birth of this website</p>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
 </body>
 <script>
     function openBlog(url){
-        window.open('blogs/' + url)
+        window.open('blogs/' + url, "_self")
     }
 </script>
 
