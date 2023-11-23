@@ -25,23 +25,17 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol, li{
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
 }
-#ball{
-    position:absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: hsl($c-hue, 100%, 80%);
-    box-shadow:
-    0 0 60px 30px $card-color, 
-    0 0 100px 60px $font-color, 
-    0 0 140px 40px $font-color; 
-}
 
 .cardBox{
     border: $border-style;
     background-color: $card-color;
-    margin: 1em;
     padding: 0.5em;
+    
+}
+.outerMargin{
+    margin: 1em;
+}
+.glow{
     box-shadow: 0px 0px 9px 0px $font-color;
 }
 .roundedBorders{
@@ -55,7 +49,21 @@ body{
     justify-content: center;
 }
 #sideBarLeft{
-    width: 12%;
+    width: 15%;
+}
+#blogHeaderTitle{
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+#blogBody{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+}
+#blogCardTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 #sideBarRight{
     display: flex;

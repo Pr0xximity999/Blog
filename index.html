@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>WEBISTE</title>
     <meta content="WEBISTE????????" property="og:title" />
     <meta content="Personal website where i put stuff about myself and things i do/make and other cool stuff and" property="og:description" />
     <meta content="https://tominhisroom.dev" property="og:url" />
-    <meta content="https://imgur.com/a/tO1Ehow" property="og:image" />
+    <meta content="https://imgur.com/a/2Ib8TT1" property="og:image" />
     <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-    <link rel="shortcut icon" href="tinymogus.gif" type="image/x-icon">
-    <link id="active style" rel="stylesheet" href="styles/style.css">
-    <link id="inactive style" rel="" href="styles/style2.css">
+    <link rel="shortcut icon" href="images/tinymogus.gif" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
     
 
     <meta charset="UTF-8">
@@ -22,19 +20,28 @@
     <!-- <div id="ball"></div> -->
     <div id="body">
         <div id="sideBarLeft">
-            <div class="cardBox roundedBorders">
-            <h1>My blog</h1>
+            <div class="cardBox glow outerMargin roundedBorders">
+                <h1 id="blogHeaderTitle">My blog</h1>
+                <div id="blogBody">
+                    <div onclick="openBlog('23-11-2023_firstBlog.html')" id="blogCard1" class="cardBox">
+                        <div id="blogCardTitle">
+                            <h3>Title</h3>
+                            <p>23/11/2023</p>
+                        </div>
+                        <p>text</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="mainBody">
-            <div id="welcomeCard" class="cardBox">
+            <div id="welcomeCard" class="cardBox glow outerMargin">
                 <h1>Hewwoooo</h1>
                 <p>Welcome to my amazing website!!!</p>
                 <p></p>
                 <a href="fridge.html">Click for cool plant in fridge</a>
             </div>
-            <div id="infoCard" class="cardBox">
+            <div id="infoCard" class="cardBox glow outerMargin">
                 <div id="infoCardRight">
                     <h4>Some info about me:</h4>
                     <ul>
@@ -67,14 +74,14 @@
             }">sex(real)</button> 
         <p>(only works if you opened this site by clicking a link)</p>
         <br>-->
-            <div id="gifDrawer1" class="cardBox">
+            <div id="gifDrawer1" class="cardBox glow outerMargin">
                 <h2 style="margin-bottom: 0;">Some cool gifs(or not gifs) my friends told me to add :3</h2>
                 <div id="gifDrawer2">
                     <script src="imagedrawer.js" defer></script>
                 </div>
                 <p>^scrollbar^</p>
             </div>
-            <footer class="cardBox">
+            <footer class="cardBox glow outerMargin">
                 <p>Made by me :3 2023</p>
                 <!-- <br>
                 <br>
@@ -84,7 +91,7 @@
             </footer>
         </div>
         <div id="sideBarRight">
-            <div id="toDoList" class="cardBox roundedBorders">
+            <div id="toDoList" class="cardBox glow outerMargin roundedBorders">
                 <h1>TODO List:</h1>
                 <p>Some stuff im probably going to put onto here (or not lol)</p>
                 <br>
@@ -103,7 +110,9 @@
     </div>
 </body>
 <script>
-
+    function openBlog(url){
+        window.open('blogs/' + url)
+    }
 </script>
 
 </html>
