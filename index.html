@@ -26,7 +26,7 @@
                     <div onclick="openBlog('23-11-2023_firstBlog.html')" id="blogCard1" class="cardBox clickable">
                         <div id="blogCardTitle">
                             <h3>Genesis</h3>
-                            <h5>23/11/2023</h5>
+                            <h6>23/11/2023</h6>
                         </div>
                         <p>The birth of this website</p>
                     </div>
@@ -36,7 +36,7 @@
 
         <div id="mainBody">
             <div id="welcomeCard" class="cardBox glow outerMargin">
-                <h1>Hewwoooo</h1>
+                <h1>Hellooo</h1>
                 <p>Welcome to my amazing website!!!</p>
                 <p></p>
                 <a href="fridge.html">Click for cool plant in fridge</a>
@@ -109,9 +109,13 @@
         </div>
     </div>
 </body>
+<audio id="electricalHum" src="Sound_effects/ElectricalHum.wav" loop></audio>
 <script>
+    window.onload = function(){
+        document.getElementById("electricalHum").play();
+    }
     function openBlog(url){
-        window.open('blogs/' + url, "_self")
+        window.open('blogs/' + url, "_self");
     }
 </script>
 </html>
