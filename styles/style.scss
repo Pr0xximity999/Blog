@@ -12,8 +12,8 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol, li{
     text-shadow: 0px 0px 6px 3px $font-color;;
     margin: 0;
 }
-h1, h2, h3{
-    animation: textShadow 1.6s infinite;
+.glitchText, h1, h2, h3{
+      animation: textShadow 1.6s infinite;
 }
 //The lines over the screen
 .crt::after {
@@ -194,6 +194,7 @@ h1, h2, h3{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 

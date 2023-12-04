@@ -4,7 +4,7 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol, li {
   text-shadow: 0px 0px 6px 3px #ffdc2e;
   margin: 0; }
 
-h1, h2, h3 {
+.glitchText, h1, h2, h3 {
   animation: textShadow 1.6s infinite; }
 
 .crt::after {
@@ -138,7 +138,8 @@ h1, h2, h3 {
 .centered {
   display: block;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  text-align: center; }
 
 .roundedBorders {
   border-radius: 10px; }
