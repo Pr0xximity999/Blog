@@ -43,6 +43,13 @@ p, h1, h2, h3, h4, h5, h6, a, ul, ol, li{
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
   }
+  .crt{
+    width: 100%; 
+    height: 100%; 
+    position: fixed;
+    pointer-events: none;
+
+  }
   @keyframes flicker {
     0% {
       opacity: 0.27861;
