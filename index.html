@@ -16,6 +16,8 @@
 </head>
 
 <body>
+    <div id="jermaHidden" class="centered"></div>  
+    <audio id="jermaSound" src="Sound_effects/fnaf_scare.ogg"></audio>
     <div id="crtDiv" class="crt"></div>
     <!-- <div id="ball"></div> -->
     <div id="body">
@@ -40,7 +42,20 @@
                     <h1>Hellooo</h1>
                     <p>Welcome to my amazing website!!!</p>
                     <p></p>
-                    <a href="pages/fridge.html">Click for cool plant in fridge</a>
+                    <a href="pages/fridge.html">Click for cool plant in fridge</a><br>
+                    <button id="sexButton" onclick="{
+                        var img = new Image()
+                        img.src = 'https://cdn.discordapp.com/attachments/1135311307516690573/1175053970855702631/latest.png'
+                        img.style.width = '70%'
+                        img.style.height = '70%'
+                        var jermaHidden = document.getElementById('jermaHidden')
+                        jermaHidden.appendChild(img)
+                        document.getElementById('jermaSound').play()
+                        new Promise(resolve => setTimeout(resolve, '300')).then(() =>{
+                            jermaHidden.innerHTML = '';
+                            document.getElementById('sexButton').remove();
+                        });
+                        }">sex(real)</button> 
                 </div>
                 <div id="poopStoneDiv" class="cardBox glow outerMargin">
                     <h3><a class="noGlitch" href="https://noita.wiki.gg/wiki/Kakkakikkare" target="_blank">NOITA POOP STONE</a></h3>
@@ -65,21 +80,7 @@
                             src="https://dimden.dev/services/images/88x31.gif"></a><br>
                 </div>
             </div>
-            <!--<div id="jermaHidden"></div>  
-         <button onclick="{
-            var img = new Image()
-            img.src = 'https://cdn.discordapp.com/attachments/1135311307516690573/1175053970855702631/latest.png'
-            img.style.width = '70%'
-            img.style.height = '70%'
-            var jermaHidden = document.getElementById('jermaHidden')
-            jermaHidden.appendChild(img)
-            new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
-                jermaHidden.innerHTML = '';
-                window.close();
-            });
-            }">sex(real)</button> 
-        <p>(only works if you opened this site by clicking a link)</p>
-        <br>-->
+            <br>
             <div id="gifDrawer1" class="cardBox glow outerMargin">
                 <h2 style="margin-bottom: 0;">Some cool gifs(or not gifs) my friends told me to add :3</h2>
                 <div id="gifDrawer2">
