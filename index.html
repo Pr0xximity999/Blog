@@ -16,7 +16,10 @@
 </head>
 
 <body>
-    <div id="crtDiv" class="crt" style="width: 100%; height: 100%;"></div>
+    <div style="position: fixed; size: 100%;" id="jermaHidden" class="centered"></div>  
+    <audio id="jermaSound" src="Sound_effects/fnaf_scare.ogg"></audio>
+    
+    <div id="crtDiv" class="crt"></div>
     <!-- <div id="ball"></div> -->
     <div id="body">
         <div id="sideBarLeft">
@@ -26,7 +29,7 @@
                     <div onclick="openBlog('23-11-2023_firstBlog.html')" id="blogCard1" class="cardBox clickable">
                         <div id="blogCardTitle">
                             <h3>Genesis</h3>
-                            <h5>23/11/2023</h5>
+                            <h6>23/11/2023</h6>
                         </div>
                         <p>The birth of this website</p>
                     </div>
@@ -35,11 +38,31 @@
         </div>
 
         <div id="mainBody">
-            <div id="welcomeCard" class="cardBox glow outerMargin">
-                <h1>Hewwoooo</h1>
-                <p>Welcome to my amazing website!!!</p>
-                <p></p>
-                <a href="fridge.html">Click for cool plant in fridge</a>
+            <div id="topRow">
+                <div id="welcomeCard" class="cardBox glow outerMargin">
+                    <h1>Hellooo</h1>
+                    <p>Welcome to my amazing website!!!</p>
+                    <p></p>
+                    <a href="pages/fridge.html">Click for cool plant in fridge</a><br>
+                    <button id="sexButton" onclick="{
+                        var img = new Image()
+                        img.src = 'https://cdn.discordapp.com/attachments/1135311307516690573/1175053970855702631/latest.png'
+                        img.style.width = '200vh'
+                        img.style.height = '100vh'
+                        img.classList = 'centered'
+                        var jermaHidden = document.getElementById('jermaHidden')
+                        jermaHidden.appendChild(img)
+                        document.getElementById('jermaSound').play()
+                        new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
+                            jermaHidden.innerHTML = '';
+                            document.getElementById('sexButton').remove();
+                        });
+                        }">sex(real)</button> 
+                </div>
+                <div id="poopStoneDiv" class="cardBox glow outerMargin">
+                    <h3><a class="noGlitch" href="https://noita.wiki.gg/wiki/Kakkakikkare" target="_blank">NOITA POOP STONE</a></h3>
+                    <img src="https://noita.wiki.gg/images/3/3d/Item_kakke.png">
+                </div>
             </div>
             <div id="infoCard" class="cardBox glow outerMargin">
                 <div id="infoCardRight">
@@ -59,21 +82,7 @@
                             src="https://dimden.dev/services/images/88x31.gif"></a><br>
                 </div>
             </div>
-            <!--<div id="jermaHidden"></div>  
-         <button onclick="{
-            var img = new Image()
-            img.src = 'https://cdn.discordapp.com/attachments/1135311307516690573/1175053970855702631/latest.png'
-            img.style.width = '70%'
-            img.style.height = '70%'
-            var jermaHidden = document.getElementById('jermaHidden')
-            jermaHidden.appendChild(img)
-            new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
-                jermaHidden.innerHTML = '';
-                window.close();
-            });
-            }">sex(real)</button> 
-        <p>(only works if you opened this site by clicking a link)</p>
-        <br>-->
+            <br>
             <div id="gifDrawer1" class="cardBox glow outerMargin">
                 <h2 style="margin-bottom: 0;">Some cool gifs(or not gifs) my friends told me to add :3</h2>
                 <div id="gifDrawer2">
@@ -96,8 +105,8 @@
                 <p>Some stuff im probably going to put onto here (or not lol)</p>
                 <br>
                 <ul>
-                    <li><strong>DONE| </strong>Find a good font to use lol</li>
-                    <li><strong>IN PROGRESS|</strong> blog page</li>
+                    <li><b class="glitchText">DONE| </b>Find a good font to use lol</li>
+                    <li><b class="glitchText">IN PROGRESS|</b> blog page</li>
                     <li>Some place to put my updates on (probably also the blog page lol)</li>
                     <li>An about me page</li>
                     <li>Improve the styling</li>
@@ -109,9 +118,13 @@
         </div>
     </div>
 </body>
+<audio id="electricalHum" src="Sound_effects/ElectricalHum.wav" loop></audio>
 <script>
+    window.onload = function(){
+        //document.getElementById("electricalHum").play();
+    }
     function openBlog(url){
-        window.open('blogs/' + url, "_self")
+        window.open('blogs/' + url, "_self");
     }
 </script>
 </html>
