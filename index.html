@@ -16,8 +16,9 @@
 </head>
 
 <body>
-    <div id="jermaHidden" class="centered"></div>  
+    <div style="position: fixed; size: 100%;" id="jermaHidden" class="centered"></div>  
     <audio id="jermaSound" src="Sound_effects/fnaf_scare.ogg"></audio>
+    
     <div id="crtDiv" class="crt"></div>
     <!-- <div id="ball"></div> -->
     <div id="body">
@@ -46,12 +47,13 @@
                     <button id="sexButton" onclick="{
                         var img = new Image()
                         img.src = 'https://cdn.discordapp.com/attachments/1135311307516690573/1175053970855702631/latest.png'
-                        img.style.width = '70%'
-                        img.style.height = '70%'
+                        img.style.width = '200vh'
+                        img.style.height = '100vh'
+                        img.classList = 'centered'
                         var jermaHidden = document.getElementById('jermaHidden')
                         jermaHidden.appendChild(img)
                         document.getElementById('jermaSound').play()
-                        new Promise(resolve => setTimeout(resolve, '300')).then(() =>{
+                        new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
                             jermaHidden.innerHTML = '';
                             document.getElementById('sexButton').remove();
                         });
