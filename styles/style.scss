@@ -238,6 +238,9 @@ a[href]:hover:not(.noGlitch){
     margin-right: auto;
     text-align: center;
 }
+.newlineOnEnter{
+  white-space: pre-line;
+}
 
 
 //Makes an element have rounded borders
@@ -285,6 +288,9 @@ body{
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+#blogText{
+  padding: 1em;
 }
 .blogImg{
     width: 60%;
