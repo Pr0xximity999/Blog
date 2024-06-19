@@ -240,6 +240,11 @@ a[href]:hover:not(.noGlitch){
 }
 .newlineOnEnter{
   white-space: pre-line;
+  font-size: 1.2rem;
+}
+
+.newlineOnEnter>img{
+  width: 80%;
 }
 
 
@@ -291,7 +296,12 @@ body{
 }
 #blogText{
   padding: 1em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
+
+
 .blogImg{
     width: 60%;
     margin-top: 3em;
