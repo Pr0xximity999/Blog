@@ -172,6 +172,13 @@ a[href]:hover:not(.noGlitch) {
   margin-right: auto;
   text-align: center; }
 
+.newlineOnEnter {
+  white-space: pre-line;
+  font-size: 1.2rem; }
+
+.newlineOnEnter > img {
+  width: 80%; }
+
 .roundedBorders {
   border-radius: 10px; }
 
@@ -212,6 +219,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap; }
+
+#blogText {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
 
 .blogImg {
   width: 60%;
