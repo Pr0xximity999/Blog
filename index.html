@@ -45,7 +45,14 @@
                     <p></p>
                     <a href="pages/fridge.html">Click for cool plant in fridge</a><br>
                     <button id="sexButton" onclick="{
-
+                        var img = new Image()
+                        img.src = 'https://i.imgflip.com/5euzvk.png'
+                        img.style.width = '200vh'
+                        img.style.height = '100vh'
+                        img.classList = 'centered'
+                        var jermaHidden = document.getElementById('jermaHidden')
+                        jermaHidden.appendChild(img)
+                        document.getElementById('jermaSound').play()
                         new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
                             jermaHidden.innerHTML = '';
                             document.getElementById('sexButton').remove();
