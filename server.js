@@ -10,12 +10,9 @@ const staticHtmlPath = path.join(__dirname, './website');
 const app = express();
 
 function visitor (req, res, next) {
-    console.log(req.ip)
-    console.log(req.path)
-    console.log(req.method)
- 
+    console.log(req.ip + " connected to the site.");
     next();
- }
+}
 
 
 app.use(cors());
@@ -29,8 +26,3 @@ app.listen(port, () => {
     console.error('Server startup error:', err);
 });
 
-app.get('/', function (req, res) {
-    var userIP = req.socket.remoteAddress;
-    console.log(userIP + " connected to the site.");
-    res.send("I see you :)")
-});
