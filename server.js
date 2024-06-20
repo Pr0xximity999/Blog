@@ -5,7 +5,7 @@ const expressStatic = require('express').static;
 const settings = require("./settings");
 
 const port = settings.port;
-const staticHtmlPath = path.join(__dirname, './');
+const staticHtmlPath = path.join(__dirname, './website');
 
 const app = express();
 app.use(cors());
