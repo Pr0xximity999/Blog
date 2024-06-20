@@ -10,7 +10,7 @@ const staticHtmlPath = path.join(__dirname, './website');
 const app = express();
 
 function visitor (req, res, next) {
-    console.log(request.headers['x-forwarded-for']+ " connected to the sitee.");
+    console.log(req.headers['x-forwarded-for']+ " connected to the sitee.");
     next();
 }
 
