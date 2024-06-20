@@ -12,7 +12,7 @@
     "npm-sass": "^3.1.0",
     "path": "^0.12.7",
     "sass": "^1.69.5",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.5"
   },
   "scripts": {
     "watch:sass": "node-sass -w styles/style.scss styles/style.css",
