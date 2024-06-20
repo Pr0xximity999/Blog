@@ -3,4 +3,4 @@ services:
   api:
     image: ghcr.io/Pr0xximity999/blog:main
     ports:
-      - "443:443"
+      - "8443:443"
