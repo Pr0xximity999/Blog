@@ -16,3 +16,7 @@ app.listen(port, () => {
 }).on('error', (err) => {
     console.error('Server startup error:', err);
 });
+app.get('/', function (req) {
+    var userIP = req.socket.remoteAddress;
+    console.log(userIP + " connected to the site.");
+});
