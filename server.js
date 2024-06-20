@@ -10,7 +10,7 @@ const staticHtmlPath = path.join(__dirname, './website');
 const app = express();
 
 function visitor (req, res, next) {
-    console.log(req.ip + " connected to the site.");
+    console.log(req.socket.remoteAddress + " connected to the sitee.");
     next();
 }
 
@@ -26,3 +26,7 @@ app.listen(port, () => {
     console.error('Server startup error:', err);
 });
 
+app.get('/', function (req, res) {
+    console.log(req.socket.remoteAddress + "logged in")
+
+});
