@@ -15,8 +15,8 @@ var page = "";
 function visitor (req, res, next) {
     if(address != req.headers['x-forwarded-for'] || page != req.headers['Referer'])
     {
-        address = req.headers['x-forwarded-for'];
-        page = req.headers['Referer'];
+        address = req.headers['x-forwarded-for']
+        page = req.headers['Referer']
         console.log("Ip: " + address + "| page: " + page);
     }
     next();
@@ -32,9 +32,4 @@ app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}...`);
 }).on('error', (err) => {
     console.error('Server startup error:', err);
-});
-
-app.get('/website', function (req, res) {
-    console.log(req.socket.remoteAddress + "logged in")
-
 });
