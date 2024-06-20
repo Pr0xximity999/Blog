@@ -1,6 +1,7 @@
-version: '1'
+version: '3'
 services:
-  api:
+  website:
+    container_name: website
     image: ghcr.io/Pr0xximity999/blog:main
     ports:
       - "8443:443"
