@@ -15,7 +15,7 @@ services:
   website:
     image: ghcr.io/pr0xximity999/blog:live
     ports:
-      - "443:443"
+      - "3001:3001"
     networks:
       - nginx-network
 
