@@ -9,8 +9,14 @@ const staticHtmlPath = path.join(__dirname, './website');
 
 const app = express();
 
+var address = "";
+
 function visitor (req, res, next) {
-    console.log(req.headers['x-forwarded-for']);
+    if(address != req.headers['x-forwarded-for'])
+    {
+         address = req.headers['x-forwarded-for']
+         console.log(req);
+    }
     next();
 }
 
