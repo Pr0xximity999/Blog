@@ -4,4 +4,4 @@ services:
     container_name: website
     image: ghcr.io/Pr0xximity999/blog:main
     ports:
-      - "8443:443"
+      - "8443:8443"
