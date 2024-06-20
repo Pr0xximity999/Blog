@@ -3,4 +3,4 @@ services:
   website:
     image: ghcr.io/Pr0xximity999/blog:live
     ports:
-      - "8443:8443"
+      - "443:443"

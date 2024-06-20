@@ -8,7 +8,7 @@ COPY ./ /usr/app
 
 RUN npm install --only=production
 
-EXPOSE 8443
+EXPOSE 443
 
 # Set up a default command
 CMD [ "npm","start" ]
