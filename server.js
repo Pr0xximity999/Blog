@@ -10,6 +10,11 @@ const staticHtmlPath = path.join(__dirname, './website');
 const app = express();
 
 function visitor (req, res, next) {
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.ip);
+    })
     console.log(req.socket.remoteAddress + " connected to the sitee.");
     next();
 }
