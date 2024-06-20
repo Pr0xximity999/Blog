@@ -17,5 +17,6 @@ app.listen(port, () => {
     console.error('Server startup error:', err);
 });
 app.get('/', function (req, res) {
-    console.log("test");
+    console.log(req + " || connected to the site.");
+    res.send("I see you :)")
 });
