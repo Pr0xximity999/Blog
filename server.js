@@ -10,12 +10,14 @@ const staticHtmlPath = path.join(__dirname, './website');
 const app = express();
 
 var address = "";
+var page = "";
 
 function visitor (req, res, next) {
-    if(address != req.headers['x-forwarded-for'])
+    if(address != req.headers['x-forwarded-for'] && page != req.headers['referer'])
     {
-         address = req.headers['x-forwarded-for']
-         console.log(address + " Opened the site");
+        address = req.headers['x-forwarded-for'];
+        page = req.headers['referer'];
+        console.log("Ip: " + address + "| page: " + page);
     }
     next();
 }
