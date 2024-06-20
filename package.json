@@ -8,8 +8,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "node-sass": "^9.0.0",
-    "npm-sass": "^3.1.0",
     "path": "^0.12.7",
     "sass": "^1.69.5",
     "dotenv": "^16.4.5"
@@ -20,6 +18,8 @@
       "dev": "nodemon server.js"
   },
   "devDependencies": {
+    "node-sass": "^9.0.0",
+    "npm-sass": "^3.1.0",
     "nodemon": "^3.1.3"
   }
 }
