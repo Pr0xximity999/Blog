@@ -15,7 +15,7 @@ function visitor (req, res, next) {
     if(address != req.headers['x-forwarded-for'])
     {
          address = req.headers['x-forwarded-for']
-         console.log(req);
+         console.log(address + "opened the site");
     }
     next();
 }
