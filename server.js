@@ -26,7 +26,7 @@ app.listen(port, () => {
     console.error('Server startup error:', err);
 });
 
-app.get('/', function (req, res) {
+app.get('/website', function (req, res) {
     console.log(req.socket.remoteAddress + "logged in")
 
 });
