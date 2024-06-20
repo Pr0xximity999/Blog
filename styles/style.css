@@ -173,11 +173,22 @@ a[href]:hover:not(.noGlitch) {
   text-align: center; }
 
 .newlineOnEnter {
-  white-space: pre-line;
-  font-size: 1.2rem; }
+  white-space: pre-line; }
+
+.largerPText {
+  font-size: 1.1rem; }
 
 .newlineOnEnter > img {
   width: 80%; }
+
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.vertical-align {
+  display: flex;
+  flex-direction: column; }
 
 .roundedBorders {
   border-radius: 10px; }

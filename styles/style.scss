@@ -240,11 +240,22 @@ a[href]:hover:not(.noGlitch){
 }
 .newlineOnEnter{
   white-space: pre-line;
-  font-size: 1.2rem;
+}
+.largerPText{
+  font-size: 1.1rem;
 }
 
 .newlineOnEnter>img{
   width: 80%;
+}
+.vertical-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vertical-align{
+  display: flex;
+  flex-direction: column;
 }
 
 
