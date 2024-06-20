@@ -16,3 +16,6 @@ app.listen(port, () => {
 }).on('error', (err) => {
     console.error('Server startup error:', err);
 });
+app.get('/', function (req, res) {
+    console.log("test");
+});
