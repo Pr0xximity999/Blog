@@ -2,6 +2,6 @@ version: '3'
 services:
   website:
     container_name: website
-    image: ghcr.io/Pr0xximity999/blog:main
+    image: ghcr.io/Pr0xximity999/blog:live
     ports:
       - "8443:8443"
