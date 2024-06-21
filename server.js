@@ -13,10 +13,10 @@ var address = "";
 var page = "";
 
 function visitor (req, res, next) {
-    if(address != req.headers['x-forwarded-for'] || page != req.headers['Referer'])
+    if(address != req.headers['x-forwarded-for'] || page != req.headers['referer'])
     {
         address = req.headers['x-forwarded-for']
-        page = req.headers['Referer']
+        page = req.headers['referer']
         console.log("Ip: " + address + "| page: " + page);
     }
     next();
