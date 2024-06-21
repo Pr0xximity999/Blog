@@ -45,6 +45,20 @@
                     <p>Welcome to my amazing website!!!</p>
                     <p></p>
                     <a href="pages/fridge.html">Click for cool plant in fridge</a><br>
+                    <button id="jermaButton" onclick="{
+                        var img = new Image()
+                        img.src = 'https://i.imgflip.com/5euzvk.png'
+                        img.style.width = '200vh'
+                        img.style.height = '100vh'
+                        img.classList = 'centered'
+                        var jermaHidden = document.getElementById('jermaHidden')
+                        jermaHidden.appendChild(img)
+                        document.getElementById('jermaSound').play()
+                        new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
+                            jermaHidden.innerHTML = '';
+                            document.getElementById('jermaButton').remove();
+                        });
+                        }">Click for jerma jumpscare</button> 
                 </div>
                 <div id="topRightDiv" class="vertical-align">
                     <div id="quoteDiv" style="margin-bottom: 0;" class="cardBox glow outerMargin vertical-center">
