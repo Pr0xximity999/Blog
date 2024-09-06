@@ -4,6 +4,8 @@ const express = require("express");
 const expressStatic = require('express').static;
 const settings = require("./settings");
 
+const rssRouter = require('./website/AvansRss/server.mjs');
+
 const port = settings.port;
 const staticHtmlPath = path.join(__dirname, './website');
 
@@ -25,6 +27,7 @@ function visitor (req, res, next) {
 
 app.use(cors());
 app.use(visitor)
+app.use('/avansRss', rssRouter);
 app.use(expressStatic(staticHtmlPath));
 
 // start the Express server
