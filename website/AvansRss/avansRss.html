@@ -8,19 +8,22 @@
     <title>Document</title>
 </head>
 
-<body id="body">
-    <script>
-        async function getData() {
-            var response = await fetch("https://tominhisroom.dev/avansrssapi")
-            console.log(response);
-            
-            if (response.ok) {
-                var page = await response.text
-                document.getElementById('body').innerHTML = page;
-            }
-        }
-        getData();
-    </script>
+<body>
+    <div class="cardBox roundedBorders" style="flex-direction: column;" id="body">
+
+    </div>
 </body>
+<script>
+    async function getData() {
+        var response = await fetch("https://tominhisroom.dev/avansrssapi")
+        console.log(response);
+
+        if (response.ok) {
+            var page = await response.text();
+            document.getElementById('body').innerHTML = page;
+        }
+    }
+    getData();
+</script>
 
 </html>
