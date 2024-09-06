@@ -27,8 +27,11 @@ function visitor (req, res, next) {
 
 app.use(cors());
 app.use(visitor)
-app.use('/avansRss', rssRouter);
-app.use(expressStatic(staticHtmlPath));
+app.use('/avansRssApi', rssRouter);
+app.use('/AvansRss', (req, res, next) => {
+    res.sendFile(path.join(__dirname,'./website/avansrss/avansrss.html'))
+})
+app.use(expressStatic(staticHtmlPath)); 
 
 // start the Express server
 app.listen(port, () => {
