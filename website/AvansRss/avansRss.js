@@ -1,7 +1,7 @@
-import express from 'express';
-import fetch from 'node-fetch';
-import fs from 'node:fs'
-import convert from 'xml-js'
+const express = require('express');
+const fetch = require('node-fetch');
+const fs = require('node:fs');
+const convert = require('xml-js');
 
 
 //Im lazy to type the dictionary lookup every time
@@ -10,10 +10,10 @@ function GetData(dict, tag, tag2='_text')
     return dict[tag][tag2];
 }
 
-export const rssRouter = express.Router();
+const rssRouter = express.Router();
 rssRouter.use(express.json())
 
-rssRouter.get('', (req, res) => {
+rssRouter.get('/', (req, res) => {
     //Fetch the RSS xml
     fetch('https://brightspace.avans.nl/d2l/le/news/rss/6606/consolidated?token=avfnkdnxdnbi5qej11c39&ou=6606')
 
@@ -68,5 +68,6 @@ rssRouter.get('', (req, res) => {
 });
 
 
-//Run the server
-app.listen(3000, () => console.log('Server running on port 3000'));
+module.exports = {
+    rssRouter
+}

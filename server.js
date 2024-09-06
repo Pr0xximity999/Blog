@@ -4,7 +4,7 @@ const express = require("express");
 const expressStatic = require('express').static;
 const settings = require("./settings");
 
-const rssRouter = require('./website/AvansRss/server.mjs');
+const {rssRouter} = require('./website/AvansRss/avansRss.js');
 
 const port = settings.port;
 const staticHtmlPath = path.join(__dirname, './website');
