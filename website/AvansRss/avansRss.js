@@ -1,6 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const fs = require('node:fs');
+const path = require('node:path');
 const convert = require('xml-js');
 
 
@@ -13,7 +14,11 @@ function GetData(dict, tag, tag2='_text')
 const rssRouter = express.Router();
 rssRouter.use(express.json())
 
-rssRouter.get('/', (req, res) => {
+rssRouter.get('', (req, res) =>{
+    res.status(200).sendFile(path.join(__dirname, 'avansrss.html'))
+})
+
+rssRouter.get('/api', (req, res) => {
     //Fetch the RSS xml
     fetch('https://brightspace.avans.nl/d2l/le/news/rss/6606/consolidated?token=avfnkdnxdnbi5qej11c39&ou=6606')
 
