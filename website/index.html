@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WEBISTE</title>
+    <meta content="WEBISTE????????" property="og:title" />
+    <meta content="Personal website where i put stuff about myself and things i do/make and other cool stuff and" property="og:description" />
+    <meta content="https://tominhisroom.dev" property="og:url" />
+    <meta content="https://imgur.com/a/2Ib8TT1" property="og:image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <link rel="shortcut icon" href="./Images/" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div style="position: fixed; size: 100%;" id="jermaHidden" class="centered"></div>  
+    <audio id="jermaSound" src="./Sound_effects/fnaf_scare.ogg"></audio>
+    
+    <div id="crtDiv" class="crt"></div>
+    <!-- <div id="ball"></div> -->
+    <div id="body">
+        <div id="sideBarLeft">
+            <div class="cardBox glow outerMargin roundedBorders">
+                <h1 id="blogHeaderTitle">My blog</h1>
+                <div id="blogCardBody">
+                    <div onclick="openBlog('23-11-2023_firstBlog.html')" id="blogCard1" class="cardBox clickable">
+                        <div id="blogCardTitle">
+                            <h3>Genesis</h3>
+                            <h6>23/11/2023</h6>
+                        </div>
+                        <p class="newlineOnEnter">The birth of this websitee
+                            Finally finished!!!!
+                        </p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mainBody">
+            <div id="topRow">
+                <div id="welcomeCard" class="cardBox glow outerMargin">
+                    <h1>Hellooo</h1>
+                    <p>Welcome to my amazing website!!!</p>
+                    <p></p>
+                    <a href="pages/fridge.html">Click for cool plant in fridge</a><br>
+                    <button id="jermaButton" onclick="{
+                        var img = new Image()
+                        img.src = 'https://i.imgflip.com/5euzvk.png'
+                        img.style.width = '200vh'
+                        img.style.height = '100vh'
+                        img.classList = 'centered'
+                        var jermaHidden = document.getElementById('jermaHidden')
+                        jermaHidden.appendChild(img)
+                        document.getElementById('jermaSound').play()
+                        new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
+                            jermaHidden.innerHTML = '';
+                            document.getElementById('jermaButton').remove();
+                        });
+                        }">Click for jerma jumpscare</button> 
+                </div>
+                <div id="topRightDiv" class="vertical-align">
+                    <div id="quoteDiv" style="margin-bottom: 0;" class="cardBox glow outerMargin vertical-center">
+                        <h4>>And i watched the water unfold~</h4>
+                    </div>
+                    <div id="poopStoneDiv" class="cardBox glow outerMargin">
+                        <h3><a class="noGlitch" href="https://noita.wiki.gg/wiki/Kakkakikkare" target="_blank">NOITA POOP STONE</a></h3>
+                        <img src="https://noita.wiki.gg/images/3/3d/Item_kakke.png">
+                    </div>
+                </div>  
+            </div>
+            <div id="infoCard" class="cardBox glow outerMargin">
+                <div id="infoCardRight">
+                    <h4>Some info about me:</h4>
+                    <ul>
+                        <li>My name is Thomas</li>
+                        <li>I like to program even though i lack a whole lot of motivation lol</li>
+                        <li>I like cats :3</li>
+                    </ul>
+                </div>
+                <div id="infoCardLeft">
+                    <p>I made this website since ive seen a really cool one and wanted to make my own :3:3</p>
+                    <p>Expect this site to change a lot since im constantly working on it, so the entire look can
+                        suddenly change</p>
+                    <p>Inspired by: </p>
+                    <a href="https://dimden.dev/" target="_blank"><img
+                            src="https://dimden.dev/services/images/88x31.gif"></a><br>
+                </div>
+            </div>
+            <br>
+            <div id="gifDrawer1" class="cardBox glow outerMargin">
+                <h2 style="margin-bottom: 0;">Some cool gifs(or not gifs) my friends told me to add :3</h2>
+                <div id="gifDrawer2">
+                    <script src="imagedrawer.js" defer></script>
+                </div>
+                <p>^scrollbar^</p>
+            </div>
+            <footer class="cardBox glow outerMargin">
+                <p>Made by me :3 2023</p>
+                <p><a href="https://docs.tominhisroom.dev/20---29-School/21---Slb/21.02---Verslag-intervisie-1">My docs website!!!!!</a></p>
+                <br>
+                <a href="https://hotlinewebring.club/tomhisroom/previous"><---</a>
+                <a href="https://hotlinewebring.club">super awesome cool webring (its a bit broken, sorry)</a>
+                <a href="https://hotlinewebring.club/tomhisroom/next">---></a> 
+            </footer>
+        </div>
+        <div id="sideBarRight">
+            <div id="toDoList" class="cardBox glow outerMargin roundedBorders">
+                <h1>TODO List:</h1>
+                <p>Some stuff im probably going to put onto here (or not lol)</p>
+                <br>
+                <ul>
+                    <li><b class="glitchText">DONE | </b>Find a good font to use lol</li>
+                    <li><b class="glitchText">DONE |</b> blog page</li>
+                    <li><b class="glitchText">IN PROGRESS |</b>Markup support for my obsidian documentation</li>
+                    <li>Some place to put my updates on (probably also the blog page lol)</li>
+                    <li>A daily user counter</li>
+                    <li>An about me page</li>
+                    <li>Improve the styling</li>
+                    <li>A place to post pictures ive made</li>
+                    <li>Some button that pulls up a funny image or meme</li>
+                    <li>Mobile support</li>
+                    <li>etc</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<audio id="electricalHum" src="Sound_effects/ElectricalHum.wav" loop></audio>
+<script>
+    window.onload = function(){
+        //document.getElementById("electricalHum").play();
+    }
+    function openBlog(url){
+        window.open('blogs/' + url, "_self");
+    }
+</script>
+</html>
