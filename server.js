@@ -14,14 +14,15 @@ const avansRssPath = path.join(__dirname, './website/avansrss/avansrss.html')
 const app = express();
 
 var address = "";
+var referer = "";
 var page = "";
-
 function visitor (req, res, next) {
-    if(address != req.headers['x-forwarded-for'] || page != req.headers['referer'])
+    if(address != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
     {
         address = req.headers['x-forwarded-for']
-        page = req.headers['referer'] 
-        console.log("Ip: " + address + "| page: " + page);
+        referer = req.headers['referer'] 
+        page = req.headers['location']
+        console.log("Ip: " + address + " | ref page: " + referer + " | req page: " + page);
     }
     next();
 }
