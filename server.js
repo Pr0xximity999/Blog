@@ -3,6 +3,7 @@ const path = require('path');
 const express = require("express");
 const expressStatic = require('express').static;
 const settings = require("./settings");
+const utils = require("./utils/utilities")
 
 const port = settings.port;
 const staticHtmlPath = path.join(__dirname, './website');
@@ -13,16 +14,18 @@ const app = express();
 var address = "";
 var referer = "";
 var page = "";
+var date = new Date();
 function visitor (req, res, next) {
     if(address != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
     {
         address = req.headers['x-forwarded-for']
         referer = req.headers['referer'] 
         page = req.headers['location']
-        console.log(Date.now() +
-            " | Ip: " + address + 
-            " | ref page: " + referer + 
-            " | req page: " + page);
+        console.log(
+            utils.GetFullDateTime() + ' | ' +
+            `Ip: ${address} | ` + 
+            `ref page: ${referer} | `+
+            `req page: ${page} | `);
     }
     next();
 }
