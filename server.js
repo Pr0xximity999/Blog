@@ -3,13 +3,10 @@ const path = require('path');
 const express = require("express");
 const expressStatic = require('express').static;
 const settings = require("./settings");
-const fs = require('fs')
-
-const {rssRouter} = require('./website/AvansRss/avansRss.js');
 
 const port = settings.port;
 const staticHtmlPath = path.join(__dirname, './website');
-const avansRssPath = path.join(__dirname, './website/avansrss/avansrss.html')
+
 
 const app = express();
 
@@ -22,7 +19,10 @@ function visitor (req, res, next) {
         address = req.headers['x-forwarded-for']
         referer = req.headers['referer'] 
         page = req.headers['location']
-        console.log("Ip: " + address + " | ref page: " + referer + " | req page: " + page);
+        console.log(Date.now() +
+            " | Ip: " + address + 
+            " | ref page: " + referer + 
+            " | req page: " + page);
     }
     next();
 }
@@ -31,8 +31,6 @@ function visitor (req, res, next) {
 app.use(cors());
 app.use(visitor)
 app.use(expressStatic(staticHtmlPath)); 
-
-// app.use('/avansrss', rssRouter);
 
 app.use((req, res, next) => { 
     res.status(404).sendFile(path.join(__dirname, './website/404.html'))
