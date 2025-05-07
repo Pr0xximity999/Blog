@@ -35,8 +35,13 @@ app.use(cors());
 app.use(visitor)
 app.use(expressStatic(staticHtmlPath)); 
 
+// Not found
+app.get('/404', (req, res) => {
+    res.sendFile(path.join(__dirname, './website/pages/404.html'))
+})
+
 app.use((req, res, next) => { 
-    res.status(404).sendFile(path.join(__dirname, './website/404.html'))
+    res.status(404).redirect('/404')
 })
 
 // start the Express server
