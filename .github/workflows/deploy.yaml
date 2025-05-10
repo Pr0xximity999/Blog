@@ -27,14 +27,14 @@ jobs:
           push: true
           tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
 
-      - name: Pull the image to VM
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-            sudo docker stop ${{ vars.APP_NAME }} || true
-            sudo docker rm ${{ vars.APP_NAME }} || true
-            sudo docker run -d -p ${{vars.PUBLISH_PORTS}} --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+#      - name: Pull the image to VM
+#        uses: appleboy/ssh-action@v1.0.0
+#        with:
+#          host: ${{ secrets.SSH_HOST }}
+#          username: ${{ secrets.SSH_USERNAME }}
+#          key: ${{ secrets.SSH_KEY }}
+#          script: |
+#            sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+#            sudo docker stop ${{ vars.APP_NAME }} || true
+#            sudo docker rm ${{ vars.APP_NAME }} || true
+#            sudo docker run -d -p ${{vars.PUBLISH_PORTS}} --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
