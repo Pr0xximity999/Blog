@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-            docker stop ${{ vars.APP_NAME }} || true
-            docker rm ${{ vars.APP_NAME }} || true
-            eval "docker run -d $(echo '${{vars.PUBLISH_PORTS}}' | sed 's/,/ -p /g' | sed 's/^/-p /') --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest"
+            sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+            sudo docker stop ${{ vars.APP_NAME }} || true
+            sudo docker rm ${{ vars.APP_NAME }} || true
+            sudo eval "docker run -d $(echo '${{vars.PUBLISH_PORTS}}' | sed 's/,/ -p /g' | sed 's/^/-p /') --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest"
