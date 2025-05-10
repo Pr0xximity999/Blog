@@ -5,17 +5,17 @@
     <meta content="WEBISTE????????" property="og:title" />
     <meta content="Personal website where i put stuff about myself and things i do/make and other cool stuff and" property="og:description" />
     <meta content="https://tominhisroom.dev" property="og:url" />
-    <meta content="https://imgur.com/a/2Ib8TT1" property="og:image" />
+    <meta content="./images/head/og-image.jpeg" property="og:image" />
     <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-    <link rel="shortcut icon" href="./Images/" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="./images/head/icon.gif" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <div style="position: fixed; size: 100%;" id="jermaHidden" class="centered"></div>  
-    <audio id="jermaSound" src="./Sound_effects/fnaf_scare.ogg"></audio>
+    <audio id="jermaSound" src="./sound-effects/fnaf_scare.ogg"></audio>
     
     <div id="crtDiv" class="crt"></div>
     <!-- <div id="ball"></div> -->
@@ -34,10 +34,18 @@
                         </p>
                         <p></p>
                     </div>
+                    <div onclick="openBlog('07-05-2025_imback.html')" id="blogCard2" class="cardBox clickable">
+                        <div id="blogCardTitle">
+                            <h3>Return</h3>
+                            <h6>07/05/2025</h6>
+                        </div>
+                        <p class="newlineOnEnter">Sorry for leaving
+                        </p>
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </div>
-
         <div id="mainBody">
             <div id="topRow">
                 <div id="welcomeCard" class="cardBox glow outerMargin">
@@ -54,13 +62,20 @@
                         var jermaHidden = document.getElementById('jermaHidden')
                         jermaHidden.appendChild(img)
                         document.getElementById('jermaSound').play()
-                        new Promise(resolve => setTimeout(resolve, '600')).then(() =>{
+                        new Promise(resolve => setTimeout(resolve, '2000')).then(() =>{
                             jermaHidden.innerHTML = '';
                             document.getElementById('jermaButton').remove();
                         });
                         }">Click for jerma jumpscare</button> 
                 </div>
-                <div id="topRightDiv" class="vertical-align">
+                <div id="topRightDiv1">
+                    <div id="documentationDiv" class="cardBox glow outerMargin roundedBorders">
+                        <a href="https://docs.tominhisroom.dev">
+                            <img style="width: 18em;" src="https://docs.tominhisroom.dev/static/og-image.png" alt="the clickable image to my docs and notes website">
+                        </a>
+                    </div>
+                </div>
+                <div id="topRightDiv2" class="vertical-align">
                     <div id="quoteDiv" style="margin-bottom: 0;" class="cardBox glow outerMargin vertical-center">
                         <h4>>And i watched the water unfold~</h4>
                     </div>
@@ -69,6 +84,7 @@
                         <img src="https://noita.wiki.gg/images/3/3d/Item_kakke.png">
                     </div>
                 </div>  
+
             </div>
             <div id="infoCard" class="cardBox glow outerMargin">
                 <div id="infoCardRight">
@@ -98,7 +114,7 @@
             </div>
             <footer class="cardBox glow outerMargin">
                 <p>Made by me :3 2023</p>
-                <p><a href="https://docs.tominhisroom.dev/20---29-School/21---Slb/21.02---Verslag-intervisie-1">My docs website!!!!!</a></p>
+                <p><a href="https://docs.tominhisroom.dev">My docs website!!!!!</a></p>
                 <br>
                 <a href="https://hotlinewebring.club/tomhisroom/previous"><---</a>
                 <a href="https://hotlinewebring.club">super awesome cool webring (its a bit broken, sorry)</a>

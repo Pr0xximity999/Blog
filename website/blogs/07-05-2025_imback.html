@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WEBISTE</title>
+    <link rel="shortcut icon" href="../images/head/icon.gif" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="crtDiv" class="crt"></div>
+    <div id="blogBody">
+        <div id="blogSideBarLeft">
+            <div onclick="goToMainPage()" id="BlogBack" class="cardBox roundedBorders glow clickable">
+                <h1>Back</h1>
+            </div>
+        </div>
+        <div id="mainBlogBody">
+            <div id="blogTitle" class="cardBox roundedBorders glow">
+                <h1>Hey</h1>
+            </div>
+            <div id="blogText" class="cardBox glow">
+                <h1>Welcome back</h1>
+                <p class="newlineOnEnter largerPText">
+                    Guess who found their motivation...heh
+                    ill try to tidy this place up a little bit
+                </p>
+            </div>
+            <div id="blogFooter" class="cardBox roundedBorders glow">
+                <a href="../index.html">Go back to main mage</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function goToMainPage(){
+        window.open("../index.html", "_self")
+    }
+</script>

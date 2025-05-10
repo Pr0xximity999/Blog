@@ -13,10 +13,9 @@ var div = document.getElementById('gifDrawer2');
 
 images.forEach(image => {
     var img = new Image();
-    img.src = 'imageDrawer/' + image;
+    img.src = './images/image-drawer/' + image;
     img.className = 'gifDrawerImages';
     div.appendChild(img);
-
 });
 
 

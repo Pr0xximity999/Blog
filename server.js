@@ -3,26 +3,29 @@ const path = require('path');
 const express = require("express");
 const expressStatic = require('express').static;
 const settings = require("./settings");
-const fs = require('fs')
-
-const {rssRouter} = require('./website/AvansRss/avansRss.js');
+const utils = require("./utils/utilities")
 
 const port = settings.port;
 const staticHtmlPath = path.join(__dirname, './website');
-const avansRssPath = path.join(__dirname, './website/avansrss/avansrss.html')
+
 
 const app = express();
 
 var address = "";
 var referer = "";
 var page = "";
+var date = new Date();
 function visitor (req, res, next) {
     if(address != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
     {
         address = req.headers['x-forwarded-for']
         referer = req.headers['referer'] 
         page = req.headers['location']
-        console.log("Ip: " + address + " | ref page: " + referer + " | req page: " + page);
+        console.log(
+            utils.GetFullDateTime() + ' | ' +
+            `Ip: ${address} | ` + 
+            `ref page: ${referer} | `+
+            `req page: ${page} | `);
     }
     next();
 }
@@ -32,10 +35,13 @@ app.use(cors());
 app.use(visitor)
 app.use(expressStatic(staticHtmlPath)); 
 
-// app.use('/avansrss', rssRouter);
+// Not found
+app.get('/404', (req, res) => {
+    res.sendFile(path.join(__dirname, './website/pages/404.html'))
+})
 
 app.use((req, res, next) => { 
-    res.status(404).sendFile(path.join(__dirname, './website/404.html'))
+    //res.status(404).redirect('/404')
 })
 
 // start the Express server
