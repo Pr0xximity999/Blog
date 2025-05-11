@@ -1,12 +1,11 @@
 version: '3'
 services:
-  website:
+  tominhisroom:
     image: tomsom999/blog:latest
     ports:
       - "3001:3001"
     networks:
-      - nginx-network
+      - tominhisroom
 
 networks:
-  nginx-network:
-    external: true
+  tominhisroom:
