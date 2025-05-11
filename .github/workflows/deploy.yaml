@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  prepare:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -32,15 +32,6 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
-  build:
-    needs: prepare
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-    steps:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
