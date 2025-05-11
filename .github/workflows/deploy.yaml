@@ -34,6 +34,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
   build:
+    needs: prepare
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -51,6 +52,7 @@ jobs:
           cache-to: type=gha,mode=max
 
   pull:
+    needs: prepare
     runs-on: ubuntu-latest
     permissions:
       contents: read
