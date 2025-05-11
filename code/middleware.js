@@ -2,11 +2,11 @@
 const fs = require("node:fs");
 const assets_directory = "./website/assets";
 
-var ip = "";
-var referer = "";
-var page = "";
-function logVisit (req, res, next) {
-    var subdirectory = req.url.split("/");
+let ip = "";
+let referer = "";
+let page = "";
+function logVisit (req, res) {
+    let subdirectory = req.url.split("/");
 
     //check if the subdirectory is a page or landingpage
     if(['index.html', 'pages'].includes(subdirectory[1]))
@@ -23,12 +23,11 @@ function logVisit (req, res, next) {
                 `req page: ${page} | `);
         }
     }
-    next();
 }
 
-function readImages (req, res, next) {
-    var images = [];
+function readImages (req, res) {
     fs.readdir(`${assets_directory}/images/image-drawer/`, (err, files) =>{
+    let images = [];
         if(err)
         {
             console.log("Error reading images: " + err)
@@ -39,18 +38,17 @@ function readImages (req, res, next) {
                 images.push(file)
             })
         }
+        let data = JSON.stringify(images);
+        fs.writeFile(`${assets_directory}/images/image-drawer/images.json`, data, (err) => {
+            if(err)
+            {
+                console.log("Errir writing image json: " + data)
+            }
+        });
     })
-    var data = JSON.stringify(images);
-    fs.writeFile(`${assets_directory}/images/image-drawer/images.json`, data, (err) => {
-        if(err)
-        {
-            console.log("Errir writing image json: " + data)
-        }
-    });
-    next();
 }
 
 module.exports = {
-    visitor: logVisit,
+    logVisit,
     readImages
 }

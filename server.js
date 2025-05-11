@@ -10,6 +10,7 @@ const cors = require("cors");
 const express = require("express");
 const expressStatic = require('express').static;
 const middleware = require("./code/middleware")
+const {visitor, logVisit, readImages} = require("./code/middleware");
 
 //Paths
 const staticHtmlPath = "./website";
@@ -20,8 +21,17 @@ const app = express();
 
 //Middleware
 app.use(cors());
-app.use(middleware.visitor);
-app.use(middleware.readImages);
+app.use((req, res, next) =>{
+    let subdirectory = req.url.split("/");
+
+    //check if the subdirectory is a page or landingpage
+    //Prevents running these methods for every asset that's loaded
+    if(['index.html', 'pages'].includes(subdirectory[1])) {
+        logVisit(req, res);
+        readImages(req, res);
+    }
+    next();
+});
 app.use(expressStatic(staticHtmlPath)); 
 
 // Not found location

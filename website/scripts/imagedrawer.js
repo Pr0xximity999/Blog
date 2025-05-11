@@ -1,19 +1,19 @@
-var images = [
-    'snugbugrug.jpg',
-    'a_melhor_imagem_do_mundo.jpeg',
-    'jiggy.gif',
-    'poop-meeting-surprised.gif',
-    'r4nhjdaz8kwb1.jpg',
-    '58ekr0dl9lzb1.webp',
-]
-var div = document.getElementById('gifDrawer2');
+fetch("./assets/images/image-drawer/images.json")
+    .then(response => response.json())
+    .then(data => {
+        var div = document.getElementById('gifDrawer2');
+        data.forEach(image => {
+            if(image.split('.')[1] !== 'json')
+            {
+                var img = new Image();
+                img.src = `./assets/images/image-drawer/${image}`;
+                img.className = 'gifDrawerImages';
+                div.appendChild(img);
+            }
+        });
+    })
+    .catch(error => console.error("Error loading image json: " + error))
 
-images.forEach(image => {
-    var img = new Image();
-    img.src = `./assets/images/image-drawer/${image}`;
-    img.className = 'gifDrawerImages';
-    div.appendChild(img);
-});
 
 
 
