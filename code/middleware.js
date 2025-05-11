@@ -3,20 +3,26 @@ const fs = require("node:fs");
 const settings = require("../config/settings.json");
 const assets_directory = "./website/assets";
 
-var address = "";
+var ip = "";
 var referer = "";
 var page = "";
-function visitor (req, res, next) {
-    if(address != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
+function logVisit (req, res, next) {
+    var subdirectory = req.url.split("/");
+
+    //check if the subdirectory is a page or landingpage
+    if(['index.html', 'pages'].includes(subdirectory[1]))
     {
-        address = req.headers['x-forwarded-for']
-        referer = req.headers['referer']
-        page = req.headers['location']
-        console.log(
-            utils.GetFullDateTime() + ' | ' +
-            `Ip: ${address} | ` +
-            `ref page: ${referer} | `+
-            `req page: ${page} | `);
+        if(ip != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
+        {
+            ip = req.headers['x-forwarded-for']
+            referer = req.headers['referer']
+            page = req.url
+            console.log(
+                utils.GetFullDateTime() + ' | ' +
+                `Ip: ${ip} | ` +
+                `ref page: ${referer} | `+
+                `req page: ${page} | `);
+        }
     }
     next();
 }
@@ -46,6 +52,6 @@ function readImages (req, res, next) {
 }
 
 module.exports = {
-    visitor,
+    visitor: logVisit,
     readImages
 }
