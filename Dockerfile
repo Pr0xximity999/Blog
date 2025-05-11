@@ -1,8 +1,6 @@
 # Specify a base image
 FROM node:alpine
 
-CMD [ "node", "--trace-warnings", "server.js" ]
-
 #Install some dependencies
 WORKDIR /usr/app
 
