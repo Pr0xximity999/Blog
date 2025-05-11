@@ -37,37 +37,15 @@ jobs:
   pull:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Docker
-        uses: docker/setup-buildx-action@v3
-
-      - name: Install Docker Compose
-        run: |
-          sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-          sudo chmod +x /usr/local/bin/docker-compose
-
-      - name: Pull latest Docker image
-        run: |
-          sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-
-      - name: Run Docker Compose
-        run: |
-          sudo docker-compose -f docker-compose.yml up -d
-#      - name: Pull the image to VM
-#        uses: appleboy/ssh-action@v1.0.0
-#        with:
-#          host: ${{ secrets.SSH_HOST }}
-#          username: ${{ secrets.SSH_USERNAME }}
-#          key: ${{ secrets.SSH_KEY }}
-#          script: |
-#            sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-#            sudo docker stop ${{ vars.APP_NAME }} || true
-#            sudo docker rm ${{ vars.APP_NAME }} || true
-#            sudo docker run -d -p ${{vars.PUBLISH_PORTS}} --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+      - name: Pull the image to VM
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+            sudo docker stop ${{ vars.APP_NAME }} || true
+            sudo docker rm ${{ vars.APP_NAME }} || true
+            sudo docker run -d -p ${{vars.PUBLISH_PORTS}} --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
