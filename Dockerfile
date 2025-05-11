@@ -5,7 +5,14 @@ CMD [ "node", "--trace-warnings", "server.js" ]
 
 #Install some dependencies
 WORKDIR /usr/app
-COPY ./ /usr/app
+
+# Copy only dependency files first
+COPY package*.json ./
+
+# Install deps inside image (clean)
+RUN npm ci --omit=dev
+
+COPY . .
 
 RUN npm install
 
