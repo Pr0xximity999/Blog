@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "watch:sass": "node-sass -w styles/style.scss styles/style.css",
+    "watch:sass": "sass --watch .\\website\\assets\\styles\\style.scss .\\website\\assets\\styles\\style.css",
     "dev": "nodemon server.js"
   },
   "devDependencies": {

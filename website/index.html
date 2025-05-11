@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body id="background">
     <div style="position: fixed; width: 100%;" id="jermaHidden" class="centered"></div>
     <audio id="jermaSound" src="assets/audio/fnaf_scare.ogg"></audio>
     
-    <div id="crtDiv" class="crt"></div>
+    <div id="crtDiv" class="crt" style="opacity: 1"></div>
     <!-- <div id="ball"></div> -->
     <div id="body">
         <div id="sideBarLeft">
@@ -144,6 +144,7 @@
     </div>
 </body>
 <audio id="electricalHum" src="assets/audio/ElectricalHum.wav" loop></audio>
+<script src="scripts/startup-flicker.js"></script>
 <script>
     window.onload = function(){
         //document.getElementById("electricalHum").play();
