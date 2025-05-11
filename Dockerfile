@@ -2,11 +2,17 @@
 FROM node:alpine
 
 #Install some dependencies
-
 WORKDIR /usr/app
-COPY ./ /usr/app
 
-RUN npm install --only=production
+# Copy only dependency files first
+COPY package*.json ./
+
+# Install deps inside image (clean)
+RUN npm ci --omit=dev
+
+COPY . .
+
+RUN npm install
 
 EXPOSE 3001
 

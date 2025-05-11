@@ -5,12 +5,19 @@ on:
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "live" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
@@ -25,9 +32,12 @@ jobs:
         with:
           platforms: linux/amd64
           push: true
-          target: final
           tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
 
+  pull:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Pull the image to VM
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -35,7 +45,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            docker pull ${{ vars.DOCKER_USERNAME }}/${{ vars.APP_NAME }}:latest
-            docker stop ${{ vars.APP_NAME }} || true
-            docker rm ${{ vars.APP_NAME }} || true
-            eval "docker run -d $(echo '${{vars.PUBLISH_PORTS}}' | sed 's/,/ -p /g' | sed 's/^/-p /') --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest"
+            sudo docker pull ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
+            sudo docker stop ${{ vars.APP_NAME }} || true
+            sudo docker rm ${{ vars.APP_NAME }} || true
+            sudo docker run -d -p ${{vars.PUBLISH_PORTS}} --name ${{ vars.APP_NAME }} ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest

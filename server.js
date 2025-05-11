@@ -1,47 +1,37 @@
-const cors = require("cors");
+//dependencies
 const path = require('path');
+
+//Settings
+const settings = require("./config/settings.json");
+const port = settings.port;
+
+//Middleware dependencies
+const cors = require("cors");
 const express = require("express");
 const expressStatic = require('express').static;
-const settings = require("./settings");
-const utils = require("./utils/utilities")
+const middleware = require("./code/middleware")
 
-const port = settings.port;
-const staticHtmlPath = path.join(__dirname, './website');
+//Paths
+const staticHtmlPath = "./website";
+const notfoundPath = "./website/pages/404.html";
 
-
+//Building the app
 const app = express();
 
-var address = "";
-var referer = "";
-var page = "";
-var date = new Date();
-function visitor (req, res, next) {
-    if(address != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
-    {
-        address = req.headers['x-forwarded-for']
-        referer = req.headers['referer'] 
-        page = req.headers['location']
-        console.log(
-            utils.GetFullDateTime() + ' | ' +
-            `Ip: ${address} | ` + 
-            `ref page: ${referer} | `+
-            `req page: ${page} | `);
-    }
-    next();
-}
-
-
+//Middleware
 app.use(cors());
-app.use(visitor)
+app.use(middleware.visitor);
+app.use(middleware.readImages);
 app.use(expressStatic(staticHtmlPath)); 
 
-// Not found
+// Not found location
 app.get('/404', (req, res) => {
-    res.sendFile(path.join(__dirname, './website/pages/404.html'))
+    res.sendFile(path.join(__dirname, notfoundPath))
 })
 
-app.use((req, res, next) => { 
-    //res.status(404).redirect('/404')
+//Default
+app.use((req, res, next) => {
+    res.status(404).redirect('/404')
 })
 
 // start the Express server
