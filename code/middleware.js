@@ -1,6 +1,5 @@
 ﻿const utils = require("../code/utils/utilities.js");
 const fs = require("node:fs");
-const settings = require("../config/settings.json");
 const assets_directory = "./website/assets";
 
 var ip = "";
@@ -12,7 +11,7 @@ function logVisit (req, res, next) {
     //check if the subdirectory is a page or landingpage
     if(['index.html', 'pages'].includes(subdirectory[1]))
     {
-        if(ip != req.headers['x-forwarded-for'] || referer != req.headers['referer'])
+        if(ip !== req.headers['x-forwarded-for'] || referer !== req.headers['referer'])
         {
             ip = req.headers['x-forwarded-for']
             referer = req.headers['referer']
