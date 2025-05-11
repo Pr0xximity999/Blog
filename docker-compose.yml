@@ -1,7 +1,7 @@
 version: '3'
 services:
   website:
-    image: ghcr.io/pr0xximity999/blog:live
+    image: tomsom999/blog:latest
     ports:
       - "3001:3001"
     networks:

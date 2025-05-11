@@ -2,7 +2,7 @@ const cors = require("cors");
 const path = require('path');
 const express = require("express");
 const expressStatic = require('express').static;
-const settings = require("./settings");
+const settings = require("./settings.json");
 const utils = require("./utils/utilities")
 
 const port = settings.port;
