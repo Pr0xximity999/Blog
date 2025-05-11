@@ -43,7 +43,7 @@ jobs:
       id-token: write
     steps:
       - name: Run docker compose
-        run: docker-compose -f "docker-compose.yml" up -d --build
+        run: docker compose -f "docker-compose.yml" up -d --build
 #      - name: Pull the image to VM
 #        uses: appleboy/ssh-action@v1.0.0
 #        with:
